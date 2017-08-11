@@ -1,8 +1,19 @@
+$(document).ready(function() {
+
 function check(){
-        var question1 = document.quiz.question1.value;
-        var question2 = document.quiz.question2.value;
-        var question3 = document.quiz.question3.value;
-        var question4 = document.quiz.question4.value;
+
+        var questions = [
+                {question: document.quiz.question1.value},
+                {question: document.quiz.question2.value},
+                {question: document.quiz.question3.value},
+                {question: document.quiz.question4.value},
+                {question: document.quiz.question5.value},
+                {question: document.quiz.question6.value},
+                {question: document.quiz.question7.value},
+                {question: document.quiz.question8.value},
+                {question: document.quiz.question9.value},
+                {question: document.quiz.question10.value}
+        ];
         var languages = [
                 {language: "C#", score: 0},
                 {language: "Java", score: 0},
@@ -12,45 +23,18 @@ function check(){
         var topScore = 0;
         var answer;
         var ties = [ ];
+        var x = 0;
 
-        if (question1 == "c#") {
-                languages[0].score++;
-        } else if (question1 == "java") {
-                languages[1].score++;
-        } else if (question1 == "php") {
-                languages[2].score++;
-        } else if (question1 == "ruby") {
-                languages[3].score++;
-        }
-
-        if (question2 == "c#") {
-                languages[0].score++;
-        } else if (question2 == "java") {
-                languages[1].score++;
-        } else if (question2 == "php") {
-                languages[2].score++;
-        } else if (question2 == "ruby") {
-                languages[3].score++;
-        }
-
-        if (question3 == "c#") {
-                languages[0].score++;
-        } else if (question3 == "java") {
-                languages[1].score++;
-        } else if (question3 == "php") {
-                languages[2].score++;
-        } else if (question3 == "ruby") {
-                languages[3].score++;
-        }
-
-        if (question4 == "c#") {
-                languages[0].score++;
-        } else if (question4 == "java") {
-                languages[1].score++;
-        } else if (question4 == "php") {
-                languages[2].score++;
-        } else if (question4 == "ruby") {
-                languages[3].score++;
+        for (var i = 0; i < questions.length; i++) {
+                if (questions[i].question == "c#") {
+                        languages[0].score++;
+                } else if (questions[i].question == "java") {
+                        languages[1].score++;
+                } else if (questions[i].question == "php") {
+                        languages[2].score++;
+                } else if (questions[i].question == "ruby") {
+                        languages[3].score++;
+                }
         }
 
         for (var i = 0; i < languages.length; i++) {
@@ -63,16 +47,22 @@ function check(){
         for (var i = 0; i < languages.length; i++) {
                 if(topScore == languages[i].score){
                         ties.push(languages[i].language);
+                        x++;
                 }
         }
 
         document.getElementById("result").style.visibility = "visible";
+
         if (ties.length < 2) {
-                document.getElementById("testResult").innerHTML = "You got" + answer + "!";
+                document.getElementById("testResult").innerHTML = "You got " + answer + "!";
         }
         else {
-                document.getElementById("testResult").innerHTML = "Yout got a tie!";
+                document.getElementById("testResult").insertAdjacentHTML("You got a tie between ");
+                for (var i = 0; i < ties.length - 1; i++) {
+                        document.getElementById("testResult").insertAdjacentHTML(ties[i] + ", ");
+                }
+                var lastItem = ties.pop();
+                document.getElementById("testResult").insertAdjacentHTML( lastItem + ".");
         }
-
-
-}
+        }
+});
