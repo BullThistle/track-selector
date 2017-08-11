@@ -13,19 +13,30 @@
                 <h1>Track Selector</h1>
                 <form id="quiz" name="quiz">
                         <p>What's your favorite...</p>
-                        <input type="text" name="question1" id="textbox">
+                        <input type="radio" id="multi-choice" name="question1"  value="c#">C#<br>
+                        <input type="radio" id="multi-choice" name="question1"  value="java"> Java<br>
+                        <input type="radio" id="multi-choice" name="question1"  value="php"> PHP<br>
+                        <input type="radio" id="multi-choice" name="question1"  value="ruby"> Ruby<br>
 
                         <p>What is...</p>
-                        <input type="radio" id="multi-choice" name="question2"  value="ruby">Ruby<br>
+                        <input type="radio" id="multi-choice" name="question2"  value="c#">C#<br>
+                        <input type="radio" id="multi-choice" name="question2"  value="java"> Java<br>
                         <input type="radio" id="multi-choice" name="question2"  value="php"> PHP<br>
+                        <input type="radio" id="multi-choice" name="question2"  value="ruby"> Ruby<br>
 
                         <p>Also what is...</p>
-                        <input type="radio" id="multi-choice" name="question3"  value="ruby">Ruby<br>
+                        <input type="radio" id="multi-choice" name="question3"  value="c#">C#<br>
+                        <input type="radio" id="multi-choice" name="question3"  value="java"> Java<br>
                         <input type="radio" id="multi-choice" name="question3"  value="php"> PHP<br>
+                        <input type="radio" id="multi-choice" name="question3"  value="ruby"> Ruby<br>
 
                         <input id="button" type="button"  value="Submit" onclick="check();">
 
 
                 </form>
+
+                <div id="result">
+                        <p id="testResult"></p>
+                </div>
         </body>
 </html>
