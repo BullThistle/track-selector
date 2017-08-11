@@ -1,5 +1,4 @@
 function print(){
-        document.getElementById("result").style.visibility = "visible";
         if (ties.length < 2) {
                 document.getElementById("testResult").innerHTML = "You got " + answer + "!";
         }
@@ -15,6 +14,7 @@ function print(){
         }
 }
 function check(){
+
         var questions = [
                 {question: document.quiz.question1.value},
                 {question: document.quiz.question2.value},
@@ -49,6 +49,7 @@ function check(){
                         ties.push(languages[i].language);
                 }
         }
+        document.getElementById("testResult").style.visibility = "visible";
         print();
 }
 var languages = [

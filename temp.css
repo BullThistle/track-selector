@@ -6,6 +6,11 @@ margin: 0;
 /*#result {
         visibility: hidden;
 }*/
+
+#testResult {
+        text-align: center;
+        font-size: 30px;
+}
 .about {
         background-color: grey;
 }
