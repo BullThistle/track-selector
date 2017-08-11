@@ -1,7 +1,41 @@
-$(document).ready(function() {
+function print(){
+        document.getElementById("result").style.visibility = "visible";
+
+        if (ties.length < 2) {
+                document.getElementById("testResult").innerHTML = "You got " + answer + "!";
+        }
+        else {
+                var tieOut = "You got a tie between ";
+                for (var i = 0; i < ties.length - 1; i++) {
+                        tieOut += ties[i] ;
+                        tieOut += ", ";
+                }
+                // tieOut = tieOut.slice(0, -2);
+                var lastItem = ties.pop();
+                tieOut += " and ";
+                tieOut += lastItem;
+                tieOut += ".";
+                alert(tieOut);
+                document.getElementById("testResult").innerHTML = tieOut;
+
+
+
+
+
+                // document.getElementById("testResult").innerHTML = "You got a tie between ";
+                // for (var i = 0; i < ties.length - 1; i++) {
+                //         $("testResult").append(ties[i] + ", ");
+                // }
+                // var lastItem = ties.pop();
+                // var newString = "You got a tie between " +
+                // alert(lastItem);
+                // $("testResult").append( lastItem + ".");
+        }
+}
+
+
 
 function check(){
-
         var questions = [
                 {question: document.quiz.question1.value},
                 {question: document.quiz.question2.value},
@@ -14,17 +48,6 @@ function check(){
                 {question: document.quiz.question9.value},
                 {question: document.quiz.question10.value}
         ];
-        var languages = [
-                {language: "C#", score: 0},
-                {language: "Java", score: 0},
-                {language: "PHP", score: 0},
-                {language: "Ruby", score: 0}
-        ];
-        var topScore = 0;
-        var answer;
-        var ties = [ ];
-        var x = 0;
-
         for (var i = 0; i < questions.length; i++) {
                 if (questions[i].question == "c#") {
                         languages[0].score++;
@@ -47,22 +70,21 @@ function check(){
         for (var i = 0; i < languages.length; i++) {
                 if(topScore == languages[i].score){
                         ties.push(languages[i].language);
-                        x++;
                 }
         }
+        print();
+}
 
-        document.getElementById("result").style.visibility = "visible";
+var languages = [
+        {language: "C#", score: 0},
+        {language: "Java", score: 0},
+        {language: "PHP", score: 0},
+        {language: "Ruby", score: 0}
+];
+var topScore = 0;
+var answer;
+var ties = [ ];
 
-        if (ties.length < 2) {
-                document.getElementById("testResult").innerHTML = "You got " + answer + "!";
-        }
-        else {
-                document.getElementById("testResult").insertAdjacentHTML("You got a tie between ");
-                for (var i = 0; i < ties.length - 1; i++) {
-                        document.getElementById("testResult").insertAdjacentHTML(ties[i] + ", ");
-                }
-                var lastItem = ties.pop();
-                document.getElementById("testResult").insertAdjacentHTML( lastItem + ".");
-        }
-        }
+$(document).ready(function() {
+
 });
