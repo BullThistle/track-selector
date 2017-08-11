@@ -1,0 +1,275 @@
+body {
+font-family: 'Lato', sans-serif;
+margin: 0;
+}
+
+/*#result {
+        visibility: hidden;
+}*/
+.about {
+        background-color: grey;
+}
+.bar {
+        background-color: grey;
+        opacity: 100%;
+}
+.pad {
+        margin-left: 350px;
+        margin-right: 350px;
+}
+body, html {
+        hight: 100%;
+        margin 0;
+        font-size: 16px;
+        font-family:"Lato", sans-serif;
+        font-weight: 400;
+        line-height: 1.8em;
+        color: #666;
+}
+.pimg1, .pimg2, .pimg3, .pimg4, .pimg5, .pimg6, .pimg7, .pimg8, .pimg9, .pimg10 {
+        position: relative;
+        opacity: 0.70;
+        background: position:center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        background-attachment: fixed;
+}
+.pimg1 {
+        background-image:  url('../images/ha1.jpg');
+        min-height: 400px;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain
+}
+.pimg2 {
+        background-image:  url('../images/ha2.jpg');
+        min-height: 400px;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain
+}
+.pimg3 {
+        background-image:  url('../images/ha3.jpg');
+        min-height: 400px;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain
+}
+.pimg4 {
+        background-image:  url('../images/ha4.jpg');
+        min-height: 400px;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain
+}
+.pimg5 {
+        background-image:  url('../images/ha5.jpg');
+        min-height: 400px;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain
+}
+.pimg6 {
+        background-image:  url('../images/ha6.jpg');
+        min-height: 400px;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain
+}
+.pimg7 {
+        background-image:  url('../images/ha7.jpg');
+        min-height: 400px;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain
+}
+.pimg8 {
+        background-image:  url('../images/ha8.jpg');
+        min-height: 400px;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain
+}
+.pimg9 {
+        background-image:  url('../images/ha9.jpg');
+        min-height: 400px;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain
+}
+.pimg10 {
+        background-image:  url('../images/ha10.jpg');
+        min-height: 400px;
+        max-width: 100%;
+        height: 100%;
+        width: 100%;
+        object-fit: contain
+}
+.section {
+        padding: 50px 80px;
+}
+.section-light{
+        background: #f4f4f4;
+        color: #666;
+}
+.section-dark{
+        background-color: #282e34;
+        color: #ddd;
+}
+.ptext{
+        position: absolute;
+        top:50%;
+        text-align: center;
+        width: 100%;
+        color: #000;
+        font-size: 27px;
+        letter-spacing: 8px;
+        text-transform: uppercase;
+}
+.ptext .border{
+        background-color: #111;
+        color: #fff;
+        padding: 20px;
+}
+.ptext .border.trans{
+  background-color:transparent;
+}
+@media (max-width: 568px) {
+        .pimg1, .pimg2, .pimg3 {
+                background-attachment: scroll;
+        }
+}
+.status-bar{
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  background-color: #cbd6cc;
+  z-index: 500;
+  text-align: center;
+  word-spacing: 50px;
+  font-size: 30px;
+
+  padding-left:  1%;
+  padding-right: 1%;
+  padding-top: 1%;
+}
+.status-bar a {
+        font-family:"Lato", sans-serif !important;
+}
+.image-left {
+        float: left;
+}
+.image-right {
+        float: right;
+}
+strong {
+        color: #681e19;
+}
+.move-soundcloud {
+        margin-left: 435px;
+}
+.rafa {
+        color: #505f77;
+}
+
+
+
+
+
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)}
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
