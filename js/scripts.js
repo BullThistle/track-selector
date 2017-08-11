@@ -1,6 +1,5 @@
 function print(){
         document.getElementById("result").style.visibility = "visible";
-
         if (ties.length < 2) {
                 document.getElementById("testResult").innerHTML = "You got " + answer + "!";
         }
@@ -10,31 +9,11 @@ function print(){
                         tieOut += ties[i] ;
                         tieOut += ", ";
                 }
-                // tieOut = tieOut.slice(0, -2);
                 var lastItem = ties.pop();
-                tieOut += " and ";
-                tieOut += lastItem;
-                tieOut += ".";
-                alert(tieOut);
+                tieOut += " and " + lastItem + ".";
                 document.getElementById("testResult").innerHTML = tieOut;
-
-
-
-
-
-                // document.getElementById("testResult").innerHTML = "You got a tie between ";
-                // for (var i = 0; i < ties.length - 1; i++) {
-                //         $("testResult").append(ties[i] + ", ");
-                // }
-                // var lastItem = ties.pop();
-                // var newString = "You got a tie between " +
-                // alert(lastItem);
-                // $("testResult").append( lastItem + ".");
         }
 }
-
-
-
 function check(){
         var questions = [
                 {question: document.quiz.question1.value},
@@ -59,14 +38,12 @@ function check(){
                         languages[3].score++;
                 }
         }
-
         for (var i = 0; i < languages.length; i++) {
                 if(languages[i].score > topScore) {
                         answer = languages[i].language;
                         topScore = languages[i].score;
                 }
         }
-
         for (var i = 0; i < languages.length; i++) {
                 if(topScore == languages[i].score){
                         ties.push(languages[i].language);
@@ -74,7 +51,6 @@ function check(){
         }
         print();
 }
-
 var languages = [
         {language: "C#", score: 0},
         {language: "Java", score: 0},
@@ -84,7 +60,5 @@ var languages = [
 var topScore = 0;
 var answer;
 var ties = [ ];
-
 $(document).ready(function() {
-
 });
